@@ -1,21 +1,31 @@
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath  } from 'node:url'
 
+// import CopyWebpackPlugin from 'copy-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const _dirName = dirname(fileURLToPath(import.meta.url))
 
 export default {
+  mode: process.env.NODE_ENV,
   entry: './src/index.ts',
   output: {
     path: resolve(_dirName, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash].js',
+    clean: true,
+  },
+  devtool: 'eval-cheap-module-source-map',
+  devServer: {
+    static: resolve(_dirName, 'public'),
+    port: 9000,
+    // compress: true,
+    hot: true,
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.ts$/i,
         use: [
           {
             loader: 'babel-loader',
@@ -40,9 +50,10 @@ export default {
         exclude: /node_modules/,
       },
       {
-        test: /\.less$/,
+        test: /\.less$/i,
         use: [
-          'style-loader',
+          // 'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'postcss-loader',
@@ -66,9 +77,18 @@ export default {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CopyWebpackPlugin({
+    //   patterns: [{
+    //     from: resolve(_dirName, 'public'),
+    //     to: resolve(_dirName, 'dist')
+    //   }],
+    // }),
     new HtmlWebpackPlugin({
+      favicon: join(_dirName, './public/favicon.png'),
       template: join(_dirName, './src/index.html'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
     }),
   ],
 

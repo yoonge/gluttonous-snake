@@ -2,11 +2,11 @@
 
 The Gluttonous Snake game built by TypeScript.
 
-## Quick Start
+## Getting Started
 
-```Bash
+```bash
 git clone https://github.com/yoonge/gluttonous-snake.git
 cd gluttonous-snake
 pnpm i
-pnpm run dev
+pnpm start
 ```

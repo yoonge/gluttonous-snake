@@ -1,9 +1,13 @@
 {
-  "include": [ "./src/**/*" ],
   "compilerOptions": {
+    "module": "esnext",
     "target": "es2015",
-    "module": "es2015",
+    "moduleResolution": "node",
+    "jsx": "react",
     "noEmitOnError": true,
+    "sourceMap": true,
     "strict": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
   }
 }
