@@ -1,0 +1,78 @@
+@font-color: black;
+@bg-color: lightyellow;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Ubuntu Mono';
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 36px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#container {
+  width: 420px;
+  height: 480px;
+  border-radius: 20px;
+  border: 10px solid @font-color;
+  background-color: @bg-color;
+  margin: 36px auto 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  #stage {
+    width: 364px;
+    height: 364px;
+    border: 2px solid @font-color;
+    position: relative;
+
+    #snake {
+      & > div {
+        width: 10px;
+        height: 10px;
+        border: 1px solid @bg-color;
+        background-color: @font-color;
+        position: absolute;
+      }
+    }
+
+    #food {
+      width: 10px;
+      height: 10px;
+      border: 1px solid @bg-color;
+      background-color: @font-color;
+      position: absolute;
+      animation: blink 1s ease infinite;
+    }
+  }
+
+  #panel {
+    width: 364px;
+    display: flex;
+    justify-content: space-between;
+
+    h4 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
+
+@keyframes blink {
+  0% { opacity: 1 }
+  75% { opacity: .75 }
+  100% { opacity: 0 }
+}

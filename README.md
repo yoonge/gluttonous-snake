@@ -10,3 +10,7 @@ cd gluttonous-snake
 pnpm i
 pnpm start
 ```
+
+<!-- Then, open http://localhost:9000 in your browser except IE.
+
+You can control the snake with `W S A D` or `↑ ↓ ← →` -->

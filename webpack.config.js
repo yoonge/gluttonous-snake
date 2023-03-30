@@ -8,7 +8,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 const _dirName = dirname(fileURLToPath(import.meta.url))
 
 export default {
-  mode: process.env.NODE_ENV,
+  // mode: process.env.NODE_ENV,
   entry: './src/index.ts',
   output: {
     path: resolve(_dirName, 'dist'),
@@ -84,7 +84,7 @@ export default {
     //   }],
     // }),
     new HtmlWebpackPlugin({
-      favicon: join(_dirName, './public/favicon.png'),
+      // favicon: join(_dirName, './public/favicon.png'),
       template: join(_dirName, './src/index.html'),
     }),
     new MiniCssExtractPlugin({
