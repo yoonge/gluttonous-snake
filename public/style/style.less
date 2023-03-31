@@ -1,14 +1,12 @@
-@font-color: black;
-@bg-color: lightyellow;
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  font-family: 'Ubuntu Mono';
+html,
+body {
+  font-family: "Ubuntu Mono", "Microsoft YaHei";
   width: 100%;
   height: 100%;
 }
@@ -21,12 +19,24 @@ h1 {
   text-align: center;
 }
 
+h5 {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 16px;
+
+  code {
+    color: red;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    background-color: lightyellow;
+  }
+}
+
 #container {
   width: 420px;
   height: 480px;
   border-radius: 20px;
-  border: 10px solid @font-color;
-  background-color: @bg-color;
+  border: 10px solid;
   margin: 36px auto 0;
   display: flex;
   flex-flow: column;
@@ -36,15 +46,14 @@ h1 {
   #stage {
     width: 364px;
     height: 364px;
-    border: 2px solid @font-color;
+    border: 2px solid;
     position: relative;
 
     #snake {
       & > div {
         width: 10px;
         height: 10px;
-        border: 1px solid @bg-color;
-        background-color: @font-color;
+        border: 1px solid;
         position: absolute;
       }
     }
@@ -52,8 +61,7 @@ h1 {
     #food {
       width: 10px;
       height: 10px;
-      border: 1px solid @bg-color;
-      background-color: @font-color;
+      border: 1px solid;
       position: absolute;
       animation: blink 1s ease infinite;
     }
@@ -71,8 +79,217 @@ h1 {
   }
 }
 
+#btn {
+  text-align: center;
+  margin: 36px auto 0;
+
+  & > button {
+    font-size: 16px;
+    font-weight: bold;
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+  }
+}
+
+#theme {
+  text-align: center;
+  margin: 36px auto 0;
+
+  & > span {
+    font-size: 22px;
+    font-weight: bold;
+    vertical-align: 3px;
+  }
+
+  & > ul {
+    display: inline;
+    vertical-align: baseline;
+
+    & > li {
+      display: inline;
+      padding: 0 6px;
+
+      & > span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+
+        &.current {
+          border: 2px solid black;
+        }
+
+        &#lightpink {
+          background-color: lightpink;
+        }
+
+        &#skyblue {
+          background-color: skyblue;
+        }
+
+        &#lightyellow {
+          background-color: lightyellow;
+        }
+
+        &#lightseagreen {
+          background-color: lightseagreen;
+        }
+
+        &#darkslategray {
+          background-color: black;
+
+          &.current {
+            border-color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lightpink {
+  @font-color: black;
+  @bg-color: lightpink;
+
+  #container {
+    border-color: @font-color;
+    background-color: @bg-color;
+
+    #stage {
+      border-color: @font-color;
+
+      #snake > div {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+
+      #food {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+    }
+  }
+}
+
+.skyblue {
+  @font-color: black;
+  @bg-color: skyblue;
+
+  #container {
+    border-color: @font-color;
+    background-color: @bg-color;
+
+    #stage {
+      border-color: @font-color;
+
+      #snake > div {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+
+      #food {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+    }
+  }
+}
+
+.lightyellow {
+  @font-color: black;
+  @bg-color: lightyellow;
+
+  #container {
+    border-color: @font-color;
+    background-color: @bg-color;
+
+    #stage {
+      border-color: @font-color;
+
+      #snake > div {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+
+      #food {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+    }
+  }
+}
+
+.lightseagreen {
+  @font-color: black;
+  @bg-color: lightseagreen;
+
+  #container {
+    border-color: @font-color;
+    background-color: @bg-color;
+
+    #stage {
+      border-color: @font-color;
+
+      #snake > div {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+
+      #food {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+    }
+  }
+}
+
+.darkslategray {
+  background-color: black;
+
+  @font-color: white;
+  @bg-color: darkslategray;
+
+  h1 {
+    color: @font-color;
+  }
+
+  #container {
+    border-color: @font-color;
+    background-color: @bg-color;
+
+    #stage {
+      border-color: @font-color;
+
+      #snake > div {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+
+      #food {
+        border-color: @bg-color;
+        background-color: @font-color;
+      }
+    }
+
+    #panel {
+      color: @font-color;
+    }
+  }
+
+  #theme > span {
+    color: @font-color;
+  }
+}
+
 @keyframes blink {
-  0% { opacity: 1 }
-  75% { opacity: .75 }
-  100% { opacity: 0 }
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
 }
