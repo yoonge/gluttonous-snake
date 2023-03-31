@@ -148,104 +148,34 @@ h5 {
   }
 }
 
-.lightpink {
-  @font-color: black;
-  @bg-color: lightpink;
+@font-color: #1a1a1a;
+@colors: lightpink, skyblue, lightyellow, lightseagreen;
 
-  #container {
-    border-color: @font-color;
-    background-color: @bg-color;
-
-    #stage {
+each(@colors, {
+  .@{value} {
+    #container {
       border-color: @font-color;
+      background-color: @value;
 
-      #snake > div {
-        border-color: @bg-color;
-        background-color: @font-color;
-      }
+      #stage {
+        border-color: @font-color;
 
-      #food {
-        border-color: @bg-color;
-        background-color: @font-color;
+        #snake > div {
+          border-color: @value;
+          background-color: @font-color;
+        }
+
+        #food {
+          border-color: @value;
+          background-color: @font-color;
+        }
       }
     }
   }
-}
-
-.skyblue {
-  @font-color: black;
-  @bg-color: skyblue;
-
-  #container {
-    border-color: @font-color;
-    background-color: @bg-color;
-
-    #stage {
-      border-color: @font-color;
-
-      #snake > div {
-        border-color: @bg-color;
-        background-color: @font-color;
-      }
-
-      #food {
-        border-color: @bg-color;
-        background-color: @font-color;
-      }
-    }
-  }
-}
-
-.lightyellow {
-  @font-color: black;
-  @bg-color: lightyellow;
-
-  #container {
-    border-color: @font-color;
-    background-color: @bg-color;
-
-    #stage {
-      border-color: @font-color;
-
-      #snake > div {
-        border-color: @bg-color;
-        background-color: @font-color;
-      }
-
-      #food {
-        border-color: @bg-color;
-        background-color: @font-color;
-      }
-    }
-  }
-}
-
-.lightseagreen {
-  @font-color: black;
-  @bg-color: lightseagreen;
-
-  #container {
-    border-color: @font-color;
-    background-color: @bg-color;
-
-    #stage {
-      border-color: @font-color;
-
-      #snake > div {
-        border-color: @bg-color;
-        background-color: @font-color;
-      }
-
-      #food {
-        border-color: @bg-color;
-        background-color: @font-color;
-      }
-    }
-  }
-}
+});
 
 .darkslategray {
-  background-color: black;
+  background-color: #1a1a1a;
 
   @font-color: white;
   @bg-color: darkslategray;

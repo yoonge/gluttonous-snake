@@ -11,6 +11,4 @@ pnpm i
 pnpm start
 ```
 
-<!-- Then, open http://localhost:9000 in your browser except IE.
-
-You can control the snake with `W S A D` or `↑ ↓ ← →` -->
+Keys: `Space` and `↑ ← ↓ →` / `W A S D`
