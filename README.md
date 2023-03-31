@@ -1,6 +1,6 @@
 # [The Gluttonous Snake](https://github.com/yoonge/gluttonous-snake)
 
-The Gluttonous Snake game built by TypeScript.
+A Gluttonous Snake Game built by TypeScript.
 
 ## Getting Started
 

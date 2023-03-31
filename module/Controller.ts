@@ -39,19 +39,35 @@ class Controller {
     switch(code) {
       case 'KeyW':
       case 'ArrowUp':
-        this.isAlive && (this.direction = 'up')
+        if (this.isAlive) {
+          clearTimeout(this.timer)
+          this.direction = 'up'
+          this.move()
+        }
         break
       case 'KeyD':
       case 'ArrowRight':
-        this.isAlive && (this.direction = 'right')
+        if (this.isAlive) {
+          clearTimeout(this.timer)
+          this.direction = 'right'
+          this.move()
+        }
         break
       case 'KeyS':
       case 'ArrowDown':
-        this.isAlive && (this.direction = 'down')
+        if (this.isAlive) {
+          clearTimeout(this.timer)
+          this.direction = 'down'
+          this.move()
+        }
         break
       case 'KeyA':
       case 'ArrowLeft':
-        this.isAlive && (this.direction = 'left')
+        if (this.isAlive) {
+          clearTimeout(this.timer)
+          this.direction = 'left'
+          this.move()
+        }
         break
       case 'Space':
         this.pauseOrPlay()

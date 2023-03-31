@@ -1,7 +1,7 @@
 {
   "name": "gluttonous-snake",
   "version": "1.0.0",
-  "description": "The Gluttonous Snake game built by TypeScript.",
+  "description": "A Gluttonous Snake Game built by TypeScript.",
   "author": "Yoonge <7884008@qq.com>",
   "private": true,
   "type": "module",
