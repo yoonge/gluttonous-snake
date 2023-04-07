@@ -34,6 +34,8 @@ class Controller {
   }
 
   keydownHandler(event: KeyboardEvent) {
+    if (event.repeat) return
+
     const { code } = event
 
     switch(code) {
