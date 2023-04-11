@@ -1,14 +1,16 @@
 # [The Gluttonous Snake](https://github.com/yoonge/gluttonous-snake)
 
-A Gluttonous Snake Game built by TypeScript.
+Gluttonous Snake Game built with TypeScript.
 
 ## Getting Started
 
-```bash
+```sh
 git clone https://github.com/yoonge/gluttonous-snake.git
 cd gluttonous-snake
 pnpm i
 pnpm start
 ```
 
-Keys: `Space` and `↑ ← ↓ →` / `W A S D`
+## Controller
+
+<font size=4>`Space` & `↑ ← ↓ →` / `W A S D`</font>

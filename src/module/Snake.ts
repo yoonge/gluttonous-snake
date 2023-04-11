@@ -27,9 +27,7 @@ class Snake {
 
     // X-axis reverse check
     if (this.bodyItems[1] && (this.bodyItems[1] as HTMLElement).offsetLeft === val) {
-      val > this.X ?
-        val = this.X - 10 :
-        val = this.X + 10
+      val > this.X ? (val = this.X - 10) : (val = this.X + 10)
     }
 
     this.bodyMove()
@@ -47,9 +45,7 @@ class Snake {
 
     // Y-axis reverse check
     if (this.bodyItems[1] && (this.bodyItems[1] as HTMLElement).offsetTop === val) {
-      val > this.Y ?
-        val = this.Y - 10 :
-        val = this.Y + 10
+      val > this.Y ? (val = this.Y - 10) : (val = this.Y + 10)
     }
 
     this.bodyMove()
@@ -66,7 +62,7 @@ class Snake {
     const { length } = this.bodyItems
 
     for (let i = length - 1; i > 0; i--) {
-      const { offsetLeft: X, offsetTop: Y } = this.bodyItems[i-1] as HTMLElement
+      const { offsetLeft: X, offsetTop: Y } = this.bodyItems[i - 1] as HTMLElement
       const currentItem = this.bodyItems[i] as HTMLElement
       currentItem.style.left = X + 'px'
       currentItem.style.top = Y + 'px'
@@ -84,7 +80,6 @@ class Snake {
       }
     }
   }
-
 }
 
 export default Snake

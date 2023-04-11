@@ -3,13 +3,12 @@ import Food from './Food'
 import Panel from './Panel'
 
 class Controller {
-
   snake: Snake
   food: Food
   panel: Panel
   pauseBtn: HTMLElement
 
-  timer: number = 0
+  timer: NodeJS.Timeout | number = 0
 
   direction: 'up' | 'right' | 'down' | 'left'
   isAlive = true
@@ -38,7 +37,7 @@ class Controller {
 
     const { code } = event
 
-    switch(code) {
+    switch (code) {
       case 'KeyW':
       case 'ArrowUp':
         if (this.isAlive) {
@@ -80,7 +79,7 @@ class Controller {
   move() {
     let { X, Y } = this.snake
 
-    switch(this.direction) {
+    switch (this.direction) {
       case 'up':
         Y -= 10
         break
@@ -109,7 +108,7 @@ class Controller {
   }
 
   footEat(X: number, Y: number) {
-    if ( X === this.food.X && Y === this.food.Y) {
+    if (X === this.food.X && Y === this.food.Y) {
       this.food.random()
       this.panel.scoreAdd()
       this.snake.bodyItemAdd()
@@ -127,7 +126,6 @@ class Controller {
       this.move()
     }
   }
-
 }
 
 export default Controller

@@ -1,5 +1,25 @@
 *.diff
 *.err
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# cypress
+/cypress/videos/
+/cypress/screenshots/
+
+# Svelte
+/build
+/package
+/.svelte-kit
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
 
 # IntelliJ
 .idea
@@ -163,6 +183,7 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+dist-ssr
 
 # Gatsby files
 .cache/

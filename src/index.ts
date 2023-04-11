@@ -1,5 +1,5 @@
-import '../public/style/style.less'
-import Controller from '../module/Controller'
+import './assets/stylesheet/style.less'
+import Controller from './module/Controller'
 
 const body = document.querySelector('body')!
 const list = document.querySelectorAll('#theme > ul > li > span')
@@ -12,7 +12,7 @@ list.forEach(item => {
   if (item.id === theme) item.className = 'current'
 
   item.addEventListener('click', () => {
-    list.forEach(ele => ele.className = '')
+    list.forEach(ele => (ele.className = ''))
 
     localStorage.setItem('theme', item.id)
     body.className = item.id

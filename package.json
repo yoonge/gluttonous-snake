@@ -1,22 +1,23 @@
 {
-  "name": "gluttonous-snake",
-  "version": "1.0.0",
-  "description": "A Gluttonous Snake Game built by TypeScript.",
   "author": "Yoonge <7884008@qq.com>",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "webpack --mode production",
-    "lint": "eslint ./src",
-    "start": "webpack serve --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Gluttonous Snake Game built with TypeScript.",
   "keywords": [
     "Gluttonous Snake",
     "Game",
     "TypeScript"
   ],
   "license": "ISC",
+  "name": "gluttonous-snake",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --mode production",
+    "format": "prettier --plugin-search-dir . --write ./src",
+    "lint": "eslint ./src",
+    "start": "webpack serve --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
